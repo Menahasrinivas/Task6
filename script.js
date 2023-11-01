@@ -61,14 +61,14 @@ new array of only those movies in the input array with a rating of "PG". You may
     }
 }
 
-let moviee1 = new Moviee("Jailer", "Zee studios", "PG");
-let moviee2 = new Moviee("Leo", "Sri Venkateswara Creations", "V");
-let movie3 = new Moviee("Mark Antony", "KRG Studios", "PG");
-let movie4 = new Moviee("Chandramuki2", "Raj kamal films", "PG-13");
-let movie5 = new Moviee("Ponniyin Selvan2", "Vijaya production", "PG");
+const moviee1 = new Moviee("Jailer", "Zee studios", "PG");
+const moviee2 = new Moviee("Leo", "Sri Venkateswara Creations", "V");
+const movie3 = new Moviee("Mark Antony", "KRG Studios", "PG");
+const movie4 = new Moviee("Chandramuki2", "Raj kamal films", "PG-13");
+const movie5 = new Moviee("Ponniyin Selvan2", "Vijaya production", "PG");
 
-let movieArray = [moviee1, moviee2, movie3, movie4, movie5];
-let pgMovies = Moviee.getPG(movieArray);
+const movieArray = [moviee1, moviee2, movie3, movie4, movie5];
+const pgMovies = Moviee.getPG(movieArray);
 console.log(pgMovies); 
 
 
@@ -135,6 +135,55 @@ console.log(obj1.colorCircle);
 console.log(obj1.toString);
 console.log(obj1.areaCircle);
 console.log(obj1.circumferenceCircle);
+
+
+//3.Write a “person” class to hold all the details.
+
+class Person {
+    constructor(firstName, lastName, age, department, email, mobile, city){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.department=department;
+        this.email=email;
+        this.mobile=mobile;
+        this.city = city;
+    }
+    getPersonDetails(){
+        return `Name: ${this.firstName} ${this.lastName}
+        age: ${this.age}
+        department: ${this.department}
+        email: ${this.email}
+        mobile: ${this.mobile}
+        city: ${this.city}`;
+    }
+}
+const person1 = new Person("Menaha","S", 24, "Information Technology", "menaha@gmail.com", 9876543210, "chennai");
+const person2 = new Person("Dharani","T", 27, "Computer science", "dharani@gmail.com", 1234567790, "kadalur");
+
+console.log(person1.getPersonDetails());
+console.log(person2.getPersonDetails());
+
+//4.write a class to calculate the uber price
+
+class UberPrice {
+    constructor(distance, duration, baseFare, costPerMile, costPerMinute) {
+      this.distance = distance;
+      this.duration = duration;
+      this.baseFare = baseFare;
+      this.costPerMile = costPerMile;
+      this.costPerMinute = costPerMinute;
+    }
+  
+    totalPrice() {
+      return this.baseFare + (this.distance * this.costPerMile) + (this.duration * this.costPerMinute);
+    }
+  }
+  
+  const myUber = new UberPrice(5, 10, 60, 14, 2);
+  console.log(myUber.totalPrice());
+  
+
 
 
 
